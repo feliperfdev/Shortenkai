@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "Shortenkai.Controllers.ShortenkaiController",
+    "Method": "ShortCodes",
+    "RelativePath": "api/Shortenkai",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "Shortenkai.RequestShortenkai",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shortenkai.Controllers.ShortenkaiController",
+    "Method": "GetByCode",
+    "RelativePath": "api/Shortenkai/{code}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shortenkai.Controllers.ShortenkaiController",
+    "Method": "RedirectUrl",
+    "RelativePath": "url/{code}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

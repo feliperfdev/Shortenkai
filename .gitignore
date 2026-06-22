@@ -1,0 +1,4 @@
+.vs
+.*vs
+appsettings.json
+appsettings.*.json
