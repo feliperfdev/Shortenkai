@@ -5,6 +5,18 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Shortenkai/all": {
+      "get": {
+        "tags": [
+          "Shortenkai"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Shortenkai/{code}": {
       "get": {
         "tags": [
@@ -27,7 +39,7 @@
         }
       }
     },
-    "/url/{code}": {
+    "/api/Shortenkai/url/{code}": {
       "get": {
         "tags": [
           "Shortenkai"

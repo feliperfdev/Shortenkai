@@ -11,7 +11,9 @@
           "Microsoft.AspNetCore.OpenApi": "10.0.9",
           "Microsoft.EntityFrameworkCore.Design": "10.0.9",
           "Microsoft.EntityFrameworkCore.InMemory": "10.0.9",
+          "Microsoft.Extensions.Caching.StackExchangeRedis": "10.0.9",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.2",
+          "StackExchange.Redis": "3.0.0",
           "Swashbuckle.AspNetCore": "10.2.2"
         },
         "runtime": {
@@ -377,6 +379,17 @@
           }
         }
       },
+      "Microsoft.Extensions.Caching.StackExchangeRedis/10.0.9": {
+        "dependencies": {
+          "StackExchange.Redis": "3.0.0"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Caching.StackExchangeRedis.dll": {
+            "assemblyVersion": "10.0.9.0",
+            "fileVersion": "10.0.926.27113"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyModel/10.0.9": {
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.DependencyModel.dll": {
@@ -438,6 +451,26 @@
           "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "10.0.2.0",
             "fileVersion": "10.0.2.0"
+          }
+        }
+      },
+      "RESPite/3.0.0": {
+        "runtime": {
+          "lib/net10.0/RESPite.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.11234"
+          }
+        }
+      },
+      "StackExchange.Redis/3.0.0": {
+        "dependencies": {
+          "RESPite": "3.0.0",
+          "System.IO.Hashing": "10.0.5"
+        },
+        "runtime": {
+          "lib/net10.0/StackExchange.Redis.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.11234"
           }
         }
       },
@@ -545,6 +578,14 @@
             "fileVersion": "9.0.24.52809"
           }
         }
+      },
+      "System.IO.Hashing/10.0.5": {
+        "runtime": {
+          "lib/net10.0/System.IO.Hashing.dll": {
+            "assemblyVersion": "10.0.0.5",
+            "fileVersion": "10.0.526.15411"
+          }
+        }
       }
     }
   },
@@ -645,6 +686,13 @@
       "path": "microsoft.entityframeworkcore.relational/10.0.9",
       "hashPath": "microsoft.entityframeworkcore.relational.10.0.9.nupkg.sha512"
     },
+    "Microsoft.Extensions.Caching.StackExchangeRedis/10.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PkscI6VZkG+dVvKSPoR8eq/l3zl1ONPio4286+rvB/hVh2a50Du7w9jqbTWknggKobb+WnODdd4RZzSVY4Ir5g==",
+      "path": "microsoft.extensions.caching.stackexchangeredis/10.0.9",
+      "hashPath": "microsoft.extensions.caching.stackexchangeredis.10.0.9.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyModel/10.0.9": {
       "type": "package",
       "serviceable": true,
@@ -693,6 +741,20 @@
       "sha512": "sha512-PsNYgPOSW41Xx19gin7y4EdZAPteWr9Cb01XkdObxOsPzi+mgBupBEN7J7+erXFsROPOILM7MlIoO9QzL8+LGQ==",
       "path": "npgsql.entityframeworkcore.postgresql/10.0.2",
       "hashPath": "npgsql.entityframeworkcore.postgresql.10.0.2.nupkg.sha512"
+    },
+    "RESPite/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RLUe1U5VzdY0gZxXIFAWy8YS6ChUPpcnQkdMg5KkITaSO4YkVdK4Vvq0zsmXeqx/q5rhaIjCUgxnKH4j+6r/RA==",
+      "path": "respite/3.0.0",
+      "hashPath": "respite.3.0.0.nupkg.sha512"
+    },
+    "StackExchange.Redis/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-New/RKMZmVYFhkiS0eegY1YUnFlspcZUhoerUNLiA96rZxgTNhNc07go1CgIjU9JArdLXB4oB4PQvD0y350Aaw==",
+      "path": "stackexchange.redis/3.0.0",
+      "hashPath": "stackexchange.redis.3.0.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/10.2.2": {
       "type": "package",
@@ -770,6 +832,13 @@
       "sha512": "sha512-aRZlojCCGEHDKqh43jaDgaVpYETsgd7Nx4g1zwLKMtv4iTo0627715ajEFNpEEBTgLmvZuv8K0EVxc3sM4NWJA==",
       "path": "system.composition.typedparts/9.0.0",
       "hashPath": "system.composition.typedparts.9.0.0.nupkg.sha512"
+    },
+    "System.IO.Hashing/10.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8IBJWcCT9+e4Bmevm4T7+fQEiAh133KGiz4oiVTgJckd3Q76OFdR1falgn9lpz7+C4HJvogCDJeAa2QmvbeVtg==",
+      "path": "system.io.hashing/10.0.5",
+      "hashPath": "system.io.hashing.10.0.5.nupkg.sha512"
     }
   }
 }

@@ -3,6 +3,7 @@ using Npgsql;
 using Shortenkai.Database;
 using Shortenkai.Services;
 using Shortenkai.Services.Interfaces;
+using StackExchange.Redis;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,15 @@ Console.WriteLine($"PostgreSQL version: {conn.PostgreSqlVersion}");
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Redis
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = "localhost:6379";
+    options.InstanceName = "Shortenkai:";
+});
+builder.Services.AddSingleton<CacheService>();
+
 
 builder.Services.AddDbContext<ShortenkaiUrlDb>(options =>
     options.UseNpgsql(dataSource));

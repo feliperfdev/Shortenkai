@@ -15,6 +15,24 @@ namespace Shortenkai.Controllers
             _service = service;
         }
 
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await _service.GetAll();
+
+            if (result.IsNotFound)
+            {
+                return NotFound();
+            }
+
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest();
+        }
+
         [HttpGet("{code}")]
         public async Task<IActionResult> GetByCode(string code)
         {
@@ -33,7 +51,7 @@ namespace Shortenkai.Controllers
             return BadRequest();
         }
 
-        [HttpGet("/url/{code}")]
+        [HttpGet("url/{code}")]
         public async Task<IActionResult> RedirectUrl(string code)
         {
             var result = await _service.GetUrlByCode(code);

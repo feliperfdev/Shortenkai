@@ -125,3 +125,8 @@ C:\Dev\Side Projects\Shortenkai\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis
 C:\Dev\Side Projects\Shortenkai\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Dev\Side Projects\Shortenkai\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Dev\Side Projects\Shortenkai\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Dev\Side Projects\Shortenkai\obj\Debug\net10.0\Shortenkai.sourcelink.json
+C:\Dev\Side Projects\Shortenkai\bin\Debug\net10.0\RESPite.dll
+C:\Dev\Side Projects\Shortenkai\bin\Debug\net10.0\StackExchange.Redis.dll
+C:\Dev\Side Projects\Shortenkai\bin\Debug\net10.0\System.IO.Hashing.dll
+C:\Dev\Side Projects\Shortenkai\bin\Debug\net10.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll

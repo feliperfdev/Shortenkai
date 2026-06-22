@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Shortenkai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd29ef76d84691aaa3a0b9d3e00dce5b47c025f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Shortenkai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Shortenkai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

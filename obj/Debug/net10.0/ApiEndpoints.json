@@ -33,8 +33,18 @@
   },
   {
     "ContainingType": "Shortenkai.Controllers.ShortenkaiController",
+    "Method": "GetAll",
+    "RelativePath": "api/Shortenkai/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shortenkai.Controllers.ShortenkaiController",
     "Method": "RedirectUrl",
-    "RelativePath": "url/{code}",
+    "RelativePath": "api/Shortenkai/url/{code}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
