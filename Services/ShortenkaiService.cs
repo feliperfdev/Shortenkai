@@ -69,8 +69,7 @@ namespace Shortenkai.Services
         {
             try
             {
-                byte[] inputBytes = Encoding.UTF8.GetBytes(url);
-                byte[] hashBytes = SHA256.HashData(inputBytes);
+                byte[] hashBytes = SHA256.HashData(Encoding.UTF8.GetBytes(url));
                 string hashHex = Convert.ToHexString(hashBytes).ToLower();
 
                 string shortCode = hashHex.Substring(0, 10);
@@ -78,7 +77,9 @@ namespace Shortenkai.Services
 
                 var fromCache = await _cacheService.GetAsync<string>(shortCode);
 
-                if (fromCache != null) { return FAResult<ShortenedUrlDto>.Failure("This same shortened URL already exists."); }
+                if (fromCache != null) {
+                    return FAResult<ShortenedUrlDto>.Success(new ShortenedUrlDto { KeyCode = keyCode, ShortCode = shortCode, Slug = slug });
+                }
 
                 ShortenkaiUrl shortenkai = new ShortenkaiUrl { OriginalUrl = url, ShortCode = shortCode, KeyCode = keyCode, Slug = slug };
 
