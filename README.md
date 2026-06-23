@@ -64,25 +64,34 @@ On creation, the original URL is also written to Redis under the slug (or `Short
 
 ## Project Structure
 
+The solution follows Clean Architecture, split into four projects with dependencies pointing inward (`API` → `Infrastructure`/`Application` → `Domain`):
+
 ```
 Shortenkai/
-├── Controllers/
-│   └── ShortenkaiController.cs   # HTTP layer
-├── Services/
-│   ├── Interfaces/
-│   │   └── IShortenkaiService.cs
-│   ├── ShortenkaiService.cs      # Business logic & hashing
-│   └── CacheService.cs           # Generic Redis cache wrapper
-├── Models/
-│   └── ShortenkaiUrl.cs          # EF Core entity
-├── DTOs/
-│   └── ShortenedUrlDto.cs        # API response shape
-├── Database/
-│   └── ShortenkaiUrlDb.cs        # DbContext
-├── Utils/
-│   └── FAResult.cs               # Typed result wrapper (Success/NotFound/Failure)
-├── RequestShortenkai.cs          # POST request model
-└── Program.cs                    # App bootstrap & DI setup
+├── Shortenkai.Domain/                  # No dependencies — core entities
+│   └── Models/
+│       ├── ShortenkaiUrl.cs            # EF Core entity
+│       └── RequestShortenkai.cs        # POST request model
+├── Shortenkai.Application/             # Depends on Domain — use-case contracts
+│   ├── Common/
+│   │   └── FAResult.cs                 # Typed result wrapper (Success/NotFound/Failure)
+│   ├── DTOs/
+│   │   └── ShortenedUrlDto.cs          # API response shape
+│   └── Services/
+│       └── IShortenkaiService.cs
+├── Shortenkai.Infrastructure/          # Depends on Domain + Application — implementation details
+│   ├── Database/
+│   │   └── ShortenkaiUrlDb.cs          # DbContext
+│   └── Services/
+│       ├── ShortenkaiService.cs        # Business logic & hashing
+│       └── CacheService.cs             # Generic Redis cache wrapper
+└── Shortenkai.API/                     # Depends on Application + Infrastructure — HTTP host
+    ├── Controllers/
+    │   └── ShortenkaiController.cs
+    ├── Properties/
+    │   └── launchSettings.json
+    ├── appsettings.json
+    └── Program.cs                       # App bootstrap & DI setup
 ```
 
 ## Running Locally
@@ -96,11 +105,18 @@ Shortenkai/
 ### Setup
 
 1. Clone the repository
-2. Set the database connection string in `appsettings.json` under `ConnectionStrings:DefaultConnection`
+2. Set the database connection string via [.NET User Secrets](https://learn.microsoft.com/aspnet/core/security/app-secrets) instead of editing `appsettings.json` directly — this keeps the password out of source control:
+
+```bash
+cd Shortenkai.API
+dotnet user-secrets init
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Host=localhost;Port=5433;Database=Shortenkai;Username=postgres;Password=<your-password>"
+```
+
 3. Start the app:
 
 ```bash
-dotnet run
+dotnet run --project Shortenkai.API
 ```
 
 Swagger UI is served at the root path (`/`) in development mode.

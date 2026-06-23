@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="Shortenkai.csproj" />
+  <Project Path="Shortenkai.API/Shortenkai.API.csproj" Id="2c9541cb-cb53-4fb3-8dfd-90b9322dba48" />
+  <Project Path="Shortenkai.Application/Shortenkai.Application.csproj" Id="5c60a05a-7a30-47aa-a619-45ded5e72d71" />
+  <Project Path="Shortenkai.Domain/Shortenkai.Domain.csproj" Id="37547bd4-6e2a-4716-add5-00f5819f82b4" />
+  <Project Path="Shortenkai.Infrastructure/Shortenkai.Infrastructure.csproj" Id="92d2e58c-ff0d-4bb1-9604-7c2563cdf043" />
 </Solution>

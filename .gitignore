@@ -1,4 +1,14 @@
-.vs
-.*vs
+## .NET build artifacts
+[Bb]in/
+[Oo]bj/
+
+## Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+*.user
+
+## Secrets / environment
 appsettings.json
 appsettings.*.json
+*.env
